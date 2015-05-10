@@ -1,0 +1,10 @@
+@* saveEmployee Template File *@
+@(employee :Employee)
+
+@employeeMenu.render()
+<form method="post" action="@routes.EmmployeeController.updateEmployeePost()">
+Id:<input type="text" name="id" value="@employee.getId"><br/>
+Name:<input type="text" name="name" value="@employee.getName"><br/>
+Age:<input type="text" name="age" value="@employee.getAge"><br/>
+<input type="submit"><br/>
+</form>

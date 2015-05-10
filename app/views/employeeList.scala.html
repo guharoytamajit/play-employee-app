@@ -1,0 +1,11 @@
+@* employeeList Template File *@
+@(empList: List[Employee])
+
+@employeeMenu.render()
+<h2>Employee list</h2>
+<table>
+<tr><td>Id</td><td>Name</td><td>Age</td></tr>
+@for(emp <- empList){
+<tr><td>@emp.getId</td><td>@emp.getName</td><td>@emp.getAge</td><td><a href="@routes.EmmployeeController.updateEmployee(emp.getId)">update</a></td><td><a href="@routes.EmmployeeController.deleteEmployee(emp.getId)">delete</a></td></tr>	
+}
+</table>
